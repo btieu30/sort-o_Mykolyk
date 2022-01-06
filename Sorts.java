@@ -10,7 +10,7 @@ public class Sorts
     // VOID version of bubbleSort
     // Rearranges elements of input ArrayList
     // postcondition: data's elements sorted in ascending order
-    public static void bubbleSortV( ArrayList<Comparable> data )
+    public static void bubble( ArrayList<Comparable> data )
     {
 
       for( int passCtr = 1; passCtr < data.size(); passCtr++ ) {
@@ -32,7 +32,7 @@ public class Sorts
   // VOID version of InsertionSort
   // Rearranges elements of input ArrayList
   // postcondition: data's elements sorted in ascending order
-  public static void insertionSortV( ArrayList<Comparable> data )
+  public static void insertion( ArrayList<Comparable> data )
   {
     for( int partition = 1; partition < data.size(); partition++ ) {
       //partition marks first item in unsorted region
@@ -61,7 +61,7 @@ public class Sorts
   // VOID version of SelectionSort
   // Rearranges elements of input ArrayList
   // postcondition: data's elements sorted in ascending order
-  public static void selectionSortV( ArrayList<Comparable> data )
+  public static void selection( ArrayList<Comparable> data )
   {
     //note: this version places greatest value at rightmost end,
 
