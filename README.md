@@ -18,5 +18,5 @@
   * Arrangement of Data: The best case arrangement would be if the array is already sorted. For InsertionSort, the partition slowly enlarges and sorts the numbers within it, making it so that every array requires a.size() - 1 passes. But if the array is already sorted, we wouldn't conduct any swaps, making this the best case scenario.
   * Time-Complexity: The best case's time-complexity is O(n) or linear. This is because as the array size increases by 1, the number of passes also increases by 1 due to the partition having to traverse over 1 more element, creating a linear relationship. 
 * Worst Case:
-  * Arrangement of Data: The worst case arrangement would be if the array is in descending order. This is because
-  * Time-Complexity:
+  * Arrangement of Data: The worst case arrangement would be if the array is in descending order. This is because as the partition expands by 1, the amount of swaps required is equal to the index of the partition, which is the maximum amount of swaps possible. 
+  * Time-Complexity: The worst case runtime can be expressed through O(n^2) because for each pass, there are 
