@@ -7,81 +7,74 @@ import java.util.ArrayList;
 public class Sorts
 {
 
-  // VOID version of bubbleSort
-  // Rearranges elements of input ArrayList
-  // postcondition: data's elements sorted in ascending order
-  public static String bubble( ArrayList<Comparable> data )
-  {
-    int swapCtrB = 0;
-    int passCtrB = 0;
+    public static String bubble( ArrayList<Comparable> data )
+    {
+      int swapCtrB = 0;
+      int passCtrB = 0;
+      ArrayList<Comparable> input = new ArrayList<Comparable>(data);
 
-    for( int pass = 1; pass < data.size(); pass++ ) {
+      for( int pass = 1; pass < input.size(); pass++ ) {
 
-      //iterate thru first to next-to-last element, comparing to next
-      for( int i = 0; i < data.size()-1; i++ ) {
+        //iterate thru first to next-to-last element, comparing to next
+        for( int i = 0; i < input.size()-1; i++ ) {
 
-        //if element at i > element at i+1, swap
-        if ( data.get(i).compareTo(data.get(i+1) ) > 0 ) {
-          data.set( i, data.set(i+1,data.get(i)) );
-          swapCtrB++;
-        }
+          //if element at i > element at i+1, swap
+          if ( input.get(i).compareTo(input.get(i+1) ) > 0 ) {
+            input.set( i, input.set(i+1,input.get(i)) );
+            swapCtrB++;
+          }
+      }
+      passCtrB = pass;
     }
-    passCtrB = pass;
+    return ("Swaps: " + swapCtrB + "\tPasses: " + passCtrB);
   }
-  return ("Swaps: " + swapCtrB + "\tPasses: " + passCtrB);
-}
 
-  // VOID version of InsertionSort
-  // Rearranges elements of input ArrayList
-  // postcondition: data's elements sorted in ascending order
-  public static void insertion( ArrayList<Comparable> data )
+  public static String insertion( ArrayList<Comparable> data )
   {
-    for( int partition = 1; partition < data.size(); partition++ ) {
+    int swapCtrI = 0;
+    int passCtrI = 0;
+    ArrayList<Comparable> input = new ArrayList<Comparable>(data);
+    for( int partition = 1; partition < input.size(); partition++ ) {
       //partition marks first item in unsorted region
-
-      //diag:
-      System.out.println( "\npartition: " + partition + "\tdataset:");
-      System.out.println( data );
 
       //traverse sorted region from right to left
       for( int i = partition; i > 0; i-- ) {
 
         // "walk" the current item to where it belongs
         // by swapping adjacent items
-        if ( data.get(i).compareTo( data.get(i-1) ) < 0 ) {
-          //diag:
-          System.out.println( "swap indices "+(i-1)+" & "+i+"..." );
-          data.set( i, data.set( i-1, data.get(i) ) );
+        if ( input.get(i).compareTo( input.get(i-1) ) < 0 ) {
+          input.set( i, input.set( i-1, input.get(i) ) );
+          swapCtrI++;
         }
         else
           break;
-      }
     }
+      passCtrI = partition;
+    }
+    return ("Swaps: " + swapCtrI + "\tPasses: " + passCtrI);
   }//end insertionSortV
 
 
-  // VOID version of SelectionSort
-  // Rearranges elements of input ArrayList
-  // postcondition: data's elements sorted in ascending order
-  public static void selection( ArrayList<Comparable> data )
+  public static String selection( ArrayList<Comparable> data )
   {
     //note: this version places greatest value at rightmost end,
 
     //maxPos will point to position of SELECTION (greatest value)
+    ArrayList<Comparable> input = new ArrayList<Comparable>(data);
     int maxPos;
-
-    for( int pass = data.size()-1; pass > 0; pass-- ) {
-      System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
+    int swapCtrS = 0;
+    int passCtrS = 0;
+    for( int pass = input.size()-1; pass > 0; pass-- ) {
       maxPos = 0;
+      passCtrS++;
       for( int i = 1; i <= pass; i++ ) {
-        System.out.println( "maxPos: " + maxPos );//diag
-        System.out.println( data );//diag
-        if ( data.get(i).compareTo( data.get(maxPos) ) > 0 )
+        if ( input.get(i).compareTo( input.get(maxPos) ) > 0 ) {
           maxPos = i;
+        }
       }
-      data.set( maxPos, ( data.set( pass, data.get(maxPos) ) ) );
-      System.out.println( "after swap: " +  data );//diag
+      input.set( maxPos, ( input.set( pass, input.get(maxPos) ) ) );
+      swapCtrS++;
     }
+    return ("Swaps: " + swapCtrS + "\tPasses: " + passCtrS);
   }//end selectionSort
-
 }
