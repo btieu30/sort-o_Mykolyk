@@ -3,8 +3,18 @@
 // Lab04 -- Never Fear, Big O is Here!
 
 DISCO:
+0: We can use the Big O Notation to assess our code's time complexity, which can be constant, 
+   logaritmic, quadratic and more.
+1: Big O prioritizes high order terms and ignores the constants.
+2: Whenever we want to assess the runtime and time complexities of our code, we should 
+   consider the best and worst cases.
+3: There is a common pattern among the number of passes used by all three sorting algos.
+4: Both BubbleSort and InsertionSort have the same number of swaps for the best and worst cases.
+5: As the size of the array increases, the differences in efficiency of the different sorting 
+   algos become more apparent. 
 
 QCC:
+0: 
 
 BUB-QA:
  * q0: If a pass requires no swaps, what do you know?
