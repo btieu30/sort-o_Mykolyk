@@ -23,6 +23,7 @@ SEL-QA:
  * a2: We know that the array is sorted if every element has been swapped at least once.
  * q3: What does a pass boil down to?
  * a3: A pass boils down to moving the next smallest number into the next smallest index.
+ 
 INS-QA: 
  * q0: How many passes to sort n elements?
  * a0: n-1 passes
