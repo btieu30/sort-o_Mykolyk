@@ -1,33 +1,35 @@
 // Mykolyk -- Brianna Tieu and Fang Chen
 // APCS pd06
-// Lab04 -- sort-o
+// Lab04 -- Never Fear, Big O is Here!
 
 import java.util.ArrayList;
 
 public class Sorts
 {
 
-    // VOID version of bubbleSort
-    // Rearranges elements of input ArrayList
-    // postcondition: data's elements sorted in ascending order
-    public static void bubble( ArrayList<Comparable> data )
-    {
+  // VOID version of bubbleSort
+  // Rearranges elements of input ArrayList
+  // postcondition: data's elements sorted in ascending order
+  public static String bubble( ArrayList<Comparable> data )
+  {
+    int swapCtrB = 0;
+    int passCtrB = 0;
 
-      for( int passCtr = 1; passCtr < data.size(); passCtr++ ) {
-        System.out.println( "commencing pass #" + passCtr + "..." );
+    for( int pass = 1; pass < data.size(); pass++ ) {
 
-        //iterate thru first to next-to-last element, comparing to next
-        for( int i = 0; i < data.size()-1; i++ ) {
+      //iterate thru first to next-to-last element, comparing to next
+      for( int i = 0; i < data.size()-1; i++ ) {
 
-          //if element at i > element at i+1, swap
-          if ( data.get(i).compareTo(data.get(i+1) ) > 0 )
-            data.set( i, data.set(i+1,data.get(i)) );
-
-          //System.out.println(data); //diag: show current state of list
+        //if element at i > element at i+1, swap
+        if ( data.get(i).compareTo(data.get(i+1) ) > 0 ) {
+          data.set( i, data.set(i+1,data.get(i)) );
+          swapCtrB++;
         }
-      }
-
     }
+    passCtrB = pass;
+  }
+  return ("Swaps: " + swapCtrB + "\tPasses: " + passCtrB);
+}
 
   // VOID version of InsertionSort
   // Rearranges elements of input ArrayList
