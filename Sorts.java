@@ -11,6 +11,7 @@ public class Sorts
     {
       int swapCtrB = 0;
       int passCtrB = 0;
+      int compCtrB = 0;
       ArrayList<Comparable> input = new ArrayList<Comparable>(data);
 
       for( int pass = 1; pass < input.size(); pass++ ) {
@@ -22,17 +23,20 @@ public class Sorts
           if ( input.get(i).compareTo(input.get(i+1) ) > 0 ) {
             input.set( i, input.set(i+1,input.get(i)) );
             swapCtrB++;
-          }
+            compCtrB++;
+          } else { compCtrB++; }
       }
       passCtrB = pass;
     }
-    return ("Swaps: " + swapCtrB + "\tPasses: " + passCtrB);
+    return ("\nSwaps: " + swapCtrB + "\tPasses: " + passCtrB + "\tComparisons Made: " + compCtrB);
   }
 
   public static String insertion( ArrayList<Comparable> data )
   {
     int swapCtrI = 0;
     int passCtrI = 0;
+    int compCtrI = 0;
+
     ArrayList<Comparable> input = new ArrayList<Comparable>(data);
     for( int partition = 1; partition < input.size(); partition++ ) {
       //partition marks first item in unsorted region
@@ -45,13 +49,16 @@ public class Sorts
         if ( input.get(i).compareTo( input.get(i-1) ) < 0 ) {
           input.set( i, input.set( i-1, input.get(i) ) );
           swapCtrI++;
+          compCtrI++;
         }
-        else
+        else {
+          compCtrI++;
           break;
+        }
     }
       passCtrI = partition;
     }
-    return ("Swaps: " + swapCtrI + "\tPasses: " + passCtrI);
+    return ("\nSwaps: " + swapCtrI + "\tPasses: " + passCtrI + "\tComparisons Made: " + compCtrI);
   }//end insertionSortV
 
 
@@ -64,17 +71,19 @@ public class Sorts
     int maxPos;
     int swapCtrS = 0;
     int passCtrS = 0;
+    int compCtrS = 0;
     for( int pass = input.size()-1; pass > 0; pass-- ) {
       maxPos = 0;
       passCtrS++;
       for( int i = 1; i <= pass; i++ ) {
         if ( input.get(i).compareTo( input.get(maxPos) ) > 0 ) {
           maxPos = i;
-        }
+          compCtrS++;
+        } else { compCtrS++; }
       }
       input.set( maxPos, ( input.set( pass, input.get(maxPos) ) ) );
       swapCtrS++;
     }
-    return ("Swaps: " + swapCtrS + "\tPasses: " + passCtrS);
+    return ("\nSwaps: " + swapCtrS + "\tPasses: " + passCtrS + "\tComparisons Made: " + compCtrS);
   }//end selectionSort
 }

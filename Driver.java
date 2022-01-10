@@ -41,14 +41,13 @@ public static ArrayList populate( int size )
 //  System.out.println( "Ordered ascending list (0-49, inclusive) -- " + cheese );
 //  System.out.println( "Unordered descending list (49-0, inclusive) -- " + spinach );
 
-  System.out.println( "BubbleSort best case (sorted, 0-49 inclusive) -- \t" + Sorts.bubble( cheese ));
-  System.out.println( "BubbleSort worst case (descending, 49-0 inclusive) -- \t" + Sorts.bubble( spinach ));
+  System.out.println( "\nBubbleSort best case (sorted, 0-49 inclusive) -- \t" + Sorts.bubble( cheese ));
+  System.out.println( "\nBubbleSort worst case (descending, 49-0 inclusive) -- \t" + Sorts.bubble( spinach ));
+  System.out.println( "\nInsertionSort best case (sorted, 0-49 inclusive) -- \t" + Sorts.insertion( cheese ));
+  System.out.println( "\nInsertionSort worst case (descending, 49-0 inclusive) -- " + Sorts.insertion( spinach ));
 
-  System.out.println( "InsertionSort best case (sorted, 0-49 inclusive) -- \t" + Sorts.insertion( cheese ));
-  System.out.println( "InsertionSort worst case (descending, 49-0 inclusive) -- " + Sorts.insertion( spinach ));
-
-  System.out.println( "SelectionSort (sorted, 0-49 inclusive) -- \t" + Sorts.selection(cheese));
-  System.out.println( "SelectionSort (descending, 49-0 inclusive) -- \t" + Sorts.selection(spinach));
-  System.out.println( "SelectionSort (randomly sorted, 0-49) -- \t" + Sorts.selection(bread));
+  System.out.println( "\nSelectionSort (sorted, 0-49 inclusive) -- \t" + Sorts.selection(cheese));
+  System.out.println( "\nSelectionSort (descending, 49-0 inclusive) -- \t" + Sorts.selection(spinach));
+  System.out.println( "\nSelectionSort (randomly sorted, 0-49) -- \t" + Sorts.selection(bread));
   }
 }
