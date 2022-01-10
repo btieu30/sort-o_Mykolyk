@@ -49,5 +49,13 @@ public static ArrayList populate( int size )
   System.out.println( "\nSelectionSort (sorted, 0-49 inclusive) -- \t" + Sorts.selection(cheese));
   System.out.println( "\nSelectionSort (descending, 49-0 inclusive) -- \t" + Sorts.selection(spinach));
   System.out.println( "\nSelectionSort (randomly sorted, 0-49) -- \t" + Sorts.selection(bread));
+
+// No elements
+  ArrayList noSet = populate(0);
+
+  System.out.println("\nBubbleSort" + Sorts.bubble(noSet));
+  System.out.println("\nInsertionSort" + Sorts.bubble(noSet));
+  System.out.println("\nSelectionSort" + Sorts.selection(noSet));
+
   }
 }
