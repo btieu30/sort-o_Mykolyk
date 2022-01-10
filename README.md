@@ -1,4 +1,6 @@
 # Mykolyk -- Fang Chen and Brianna Tieu
+* SotW: [Willy Wonka & the Chocolate Factory - Pure Imagination](https://www.youtube.com/watch?v=myqzUur4K98)
+
 ## Bubble Sort
 * Best Case: Already Sorted / Ascending Order
   * Arrangement of Data: If the array were to already be sorted, we would only need to traverse through the array once without performing any swaps because no element would be greater than the one to its right.
